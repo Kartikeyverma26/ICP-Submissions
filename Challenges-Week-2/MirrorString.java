@@ -1,7 +1,7 @@
-package Challenges-Week-2;
-
+import java.util.*;
 public class MirrorString {
         HashMap<Character,Stack<Integer>> map=new HashMap<>();
+        Scanner sc=new 
         long score=0;
         for(int i=0;i<s.length();i++){
             char ch=s.charAt(i);
