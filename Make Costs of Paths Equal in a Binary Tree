@@ -1,0 +1,14 @@
+class Solution {
+    public int minIncrements(int n, int[] cost) {
+        int maxFromLeaf[] = new int[n + 1];
+        int res=0;
+        for (int i=n;i>0;i--) {
+            maxFromLeaf[i]+=cost[i-1];
+            maxFromLeaf[i/2]=Math.max(maxFromLeaf[i/2],maxFromLeaf[i]);
+            if (i*2+1<= n) {
+                res=res+Math.abs(maxFromLeaf[i*2]-maxFromLeaf[i*2+1]);
+            }
+        }
+        return res;
+    }
+}
